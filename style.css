@@ -136,6 +136,7 @@ body{
 /* subheader */
 .subheader{
     display:flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 .subheader > h6{
