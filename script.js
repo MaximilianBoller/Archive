@@ -81,31 +81,35 @@ let allCategorie = document.getElementById("all-categorie").addEventListener('cl
 let cssCategorie = document.getElementById("css-categorie").addEventListener('click', showCSS);
 let htmlCategorie = document.getElementById("html-categorie").addEventListener('click', showHTML);
 let javaCategorie = document.getElementById("java-categorie").addEventListener('click', showJAVA);
-
+let subHeaderText = document.getElementById("subheader-text");
 
 
 
 function showAll(){
   readArrayAndCreateHTML(blogCardDataArr);
   console.log("SHOW ALL |-------------------------------------");
+  subHeaderText.innerHTML = "Blog > ALL";
 }
 
 function showCSS(){
   sortBy("icons/css-file-icon.svg");
   readArrayAndCreateHTML(blogCardSortedArr);
   console.log("SHOW ALL |-------------------------------------");
+  subHeaderText.innerHTML = "Blog > CSS";
 }
 
 function showHTML(){
   sortBy("icons/html-file-icon.svg");
   readArrayAndCreateHTML(blogCardSortedArr);
   console.log("SHOW ALL |-------------------------------------");
+  subHeaderText.innerHTML = "Blog > HTML";
 }
 
 function showJAVA(){
   sortBy("icons/java-file-icon.svg");
   readArrayAndCreateHTML(blogCardSortedArr);
   console.log("SHOW ALL |-------------------------------------");
+  subHeaderText.innerHTML = "Blog > JAVA";
 }
 
 
