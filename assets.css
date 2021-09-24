@@ -124,11 +124,18 @@
 
 
 .card-section{
+    border: solid blue 1px;
     column-gap: 2rem;
     row-gap: 2rem;
     width: 100%;
     display: grid;
 }
+
+
+
+
+
+
 
 .card:hover,
 .card:focus{
@@ -158,6 +165,13 @@
     color: white;
 }
 
+.pinned-sign{
+    margin: 0.5rem;
+    padding: 0.25rem;
+    width: fit-content;
+    background-color: black;
+    color: white;
+}
 
 
 
