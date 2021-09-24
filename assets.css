@@ -52,6 +52,25 @@
 
 
 
+/*for blog post*/
+.basic-image{
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .background-image {
 
     background-position: center;
@@ -125,7 +144,7 @@
         width: fit-content;
         background-color: var(--background-green);
         color: black;
-        border: gray solid 1px;
+        border: black solid 1px;
         text-align: center;
         border-radius: 10rem;
         margin: 0.5rem;
