@@ -47,7 +47,19 @@ console.log("----------");
 
 
 
+getFileList();
 
+function getFileList() {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      console.log("SCAN DIR | " + xhr.response);
+    }
+  }
+  xhr.open('GET', 'blog-posts/scanDir.php', true);
+  xhr.send('');
+}
 
 
 
@@ -303,6 +315,7 @@ function readArrayAndCreateHTML(array){
   for(let y = 0; y < array.length; ++y)
   {
     let card = document.createElement('div');
+    let card_header_section = document.createElement('div');
     let card_header = document.createElement('div');
     let card_header_h6 = document.createElement('h6');
     let card_header_icon = document.createElement('img');
@@ -323,7 +336,10 @@ function readArrayAndCreateHTML(array){
 
 
     card.className = "card";
+
     card_header.className = "card-header";
+
+
     card_header_icon.className = "icon";
     card_description.className = "card-description";
     body_1.className = "body-1";
@@ -342,7 +358,7 @@ function readArrayAndCreateHTML(array){
     card_header_h6.innerText = array[y].header;
     card_header_icon.src = array[y].icon;
     body_1.innerText = array[y].preview;
-    date_text.innerText = array[y].date;
+    date_text.innerText = weeksAgo(array[y].date);
     more_button.innerText = "Erfahre mehr";
     more_button.setAttribute("href", "#");
 
@@ -361,25 +377,28 @@ function readArrayAndCreateHTML(array){
 
 
 
-    card.append(card_header,  card_description);
+    card.append(card_header_section,  card_description);
+    
     card_header.append(card_header_h6, card_header_icon);
-
-    if(array[y].pinn == "true")
-    {
-      card_description.append( pinn_sign, body_1, date_text, more_button);
-    } else{
-      card_description.append(body_1, date_text, more_button);
-      
-    }
-    
-    
+    card_description.append(body_1, date_text, more_button);
 
     if(array[y].pinn == "true"){
+
+      card_header_section.append( pinn_sign, card_header);
+
+      
+      let card1 = card.cloneNode(true);
+      console.log(card);
+      console.log(card1);
+
       pinned_blog_section.appendChild(card);
+      blog_card_section.appendChild(card1);
+
+
     } else{
+      card_header_section.append(card_header);
       blog_card_section.appendChild(card);
     }
-
   }
 }
 
@@ -409,3 +428,27 @@ function addFullBlogToSite(index)
 
 
 }
+
+
+
+
+
+
+
+
+// Get weeks ago
+
+function weeksAgo (date) {
+  let countDate = new Date(`${date} 00:00:00`).getTime();
+  let now = new Date().getTime();
+
+  let second = 1000;
+  let minute = 60*second;
+  let hour = 60*minute;
+  let day = 24*hour;
+  let week = 7*day;
+
+  let gap = countDate - now;
+  return Math.abs(Math.floor(gap/week)) + " weeks ago.";
+}
+
