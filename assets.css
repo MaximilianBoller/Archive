@@ -124,11 +124,11 @@
 
 
 .card-section{
-    border: solid blue 1px;
     column-gap: 2rem;
     row-gap: 2rem;
-    width: 100%;
+    width: calc(100% - 2rem);
     display: grid;
+    padding: 1rem;
 }
 
 
@@ -171,6 +171,12 @@
     width: fit-content;
     background-color: black;
     color: white;
+}
+
+.chips-collection{
+    display: flex;
+    justify-items: center;
+
 }
 
 
