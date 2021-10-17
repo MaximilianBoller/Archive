@@ -1,0 +1,19 @@
+/* header */
+
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+#footer > button{
+    padding: 0rem;
+    margin: .5rem .5rem .5rem 0rem;
+    background-color: transparent;
+    border: solid black 0px;
+}
+
+#footer{
+    border-top: solid black 1px;
+    padding: 0.5rem;
+}

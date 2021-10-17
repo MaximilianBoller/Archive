@@ -1,0 +1,24 @@
+
+.root,
+html{
+    --background-black: #121212;
+    --background-gray: #292929;
+    
+    --error: #CF6679;
+    
+    --primary: #5CDB95;
+    --primary-variant: #05386B;
+    --secondary: #379683;
+
+    --page_background: white;
+
+
+
+    --pastel_green: #41B3A3;
+    --pastel_purple: #C48D9D;
+    --pastel_orange: #E8A97C;
+    --pastel_blue: #85CCC9;
+    --pastel_red: #E27C5F;
+    
+    font-size: 16px;
+}
